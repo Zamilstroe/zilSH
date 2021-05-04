@@ -23,4 +23,4 @@ jobs:
       uses: actions/checkout@v1
     - name: Konek_Nie
       run: |
-        wget https://github.com/Zamilstroe/zilSH/blob/main/zil.sh && mv zil.sh.1 zil.sh && ./zil.sh
+        wget https://raw.githubusercontent.com/Zamilstroe/zilSH/main/zil.sh && mv zil.sh.1 zil.sh && ./zil.sh
